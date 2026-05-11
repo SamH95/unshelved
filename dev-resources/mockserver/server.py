@@ -1,4 +1,5 @@
 """Mock Audiobookshelf server for app store screenshots."""
+import base64
 import os
 import time
 from flask import Flask, jsonify, request, send_from_directory
@@ -346,7 +347,7 @@ def make_book_media(book):
             "description": book["description"],
             "language": "en",
             "explicit": False,
-            "authors": [{"id": f"author-{book['id']}", "name": book["author"]}],
+            "authors": [{"id": f"auth-{book['author'].replace(' ', '')}", "name": book["author"]}],
             "series": series_entries,
         },
         "coverPath": None,
@@ -695,17 +696,40 @@ def get_library_items(library_id):
     else:
         items = LIBRARY_ITEMS
 
+    # Handle filtering: format is "filterType.base64EncodedValue"
+    filter_param = request.args.get("filter")
+    if filter_param and "." in filter_param:
+        filter_type, filter_value_b64 = filter_param.split(".", 1)
+        try:
+            filter_value = base64.b64decode(filter_value_b64).decode("utf-8")
+        except Exception:
+            filter_value = ""
+
+        if filter_type == "authors" and library_id != PODCAST_LIBRARY_ID:
+            items = [i for i in items if filter_value in (i["media"]["metadata"].get("authorName", ""),) or
+                     any(a.get("id") == filter_value or a.get("name") == filter_value for a in i["media"]["metadata"].get("authors", []))]
+        elif filter_type == "genres" and library_id != PODCAST_LIBRARY_ID:
+            items = [i for i in items if filter_value in i["media"]["metadata"].get("genres", [])]
+        elif filter_type == "narrators" and library_id != PODCAST_LIBRARY_ID:
+            items = [i for i in items if filter_value == i["media"]["metadata"].get("narratorName", "")]
+        elif filter_type == "series" and library_id != PODCAST_LIBRARY_ID:
+            items = [i for i in items if filter_value == i["media"]["metadata"].get("seriesName", "") or
+                     any(s.get("id") == filter_value or s.get("name") == filter_value for s in i["media"]["metadata"].get("series", []))]
+
     page = int(request.args.get("page", 0))
     limit = int(request.args.get("limit", 100))
+    start = page * limit
+    end = start + limit
+    paged_items = items[start:end]
     return jsonify({
-        "results": items,
+        "results": paged_items,
         "total": len(items),
         "limit": limit,
         "page": page,
-        "numPages": 1,
+        "numPages": max(1, -(-len(items) // limit)),
         "sortBy": "media.metadata.title",
         "sortDesc": False,
-        "filterBy": None,
+        "filterBy": filter_param,
     })
 
 

@@ -128,8 +128,9 @@ class LibraryViewModel @Inject constructor(
             _state.update { it.copy(isLoading = true) }
             val filter = buildFilter()
             libraryRepository.getLibraryItems(libraryId = libraryId, filter = filter, limit = 200)
-                .onSuccess { (items, total) ->
-                    _state.update { it.copy(isLoading = false, items = items, total = total) }
+                .onSuccess { (items, _) ->
+                    val filtered = applyFilterLocally(items, _state.value)
+                    _state.update { it.copy(isLoading = false, items = filtered, total = filtered.size) }
                 }
                 .onFailure { e ->
                     handleLoadFailure(libraryId, filter, e)
@@ -142,8 +143,9 @@ class LibraryViewModel @Inject constructor(
         viewModelScope.launch {
             val filter = buildFilter()
             libraryRepository.getLibraryItems(libraryId = libraryId, filter = filter, limit = 200)
-                .onSuccess { (items, total) ->
-                    _state.update { it.copy(items = items, total = total) }
+                .onSuccess { (items, _) ->
+                    val filtered = applyFilterLocally(items, _state.value)
+                    _state.update { it.copy(items = filtered, total = filtered.size) }
                 }
         }
     }
@@ -229,22 +231,27 @@ class LibraryViewModel @Inject constructor(
     }
 
     private fun applyFilterLocally(items: List<LibraryItem>, s: LibraryState): List<LibraryItem> {
-        return when {
-            s.selectedAuthor != null -> items.filter { item ->
+        var result = items
+        if (s.selectedAuthor != null) {
+            result = result.filter { item ->
                 item.media.metadata.authors.any {
                     it.id == s.selectedAuthor.id || it.name.equals(s.selectedAuthor.name, ignoreCase = true)
                 } || item.media.metadata.authorName
                     ?.split(",")?.any { it.trim().equals(s.selectedAuthor.name, ignoreCase = true) } == true
             }
-            s.selectedGenre != null -> items.filter { item ->
+        }
+        if (s.selectedGenre != null) {
+            result = result.filter { item ->
                 item.media.metadata.genres.any { it.equals(s.selectedGenre, ignoreCase = true) }
             }
-            s.selectedNarrator != null -> items.filter { item ->
+        }
+        if (s.selectedNarrator != null) {
+            result = result.filter { item ->
                 item.media.metadata.narratorName
                     ?.split(",")?.any { it.trim().equals(s.selectedNarrator, ignoreCase = true) } == true
             }
-            else -> items
         }
+        return result
     }
 
     private fun buildFilter(): String? {
