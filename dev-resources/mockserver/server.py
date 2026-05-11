@@ -9,6 +9,7 @@ app = Flask(__name__)
 COVERS_DIR = os.path.join(os.path.dirname(__file__), "covers")
 BOOK_COVERS_DIR = os.path.join(COVERS_DIR, "books")
 PODCAST_COVERS_DIR = os.path.join(COVERS_DIR, "podcasts")
+AUDIO_DIR = os.path.join(os.path.dirname(__file__), "audio")
 
 # ─── Fictional Data ───────────────────────────────────────────────────────────
 
@@ -23,7 +24,7 @@ BOOKS = [
         "title": "The Midnight Garden",
         "author": "Elena Marchetti",
         "narrator": "Sophie Laurent",
-        "duration": 43200.0,
+        "duration": 600.0,
         "description": "A haunting tale of memory and loss set in a mysterious garden that only blooms at night. When Clara inherits her grandmother's estate, she discovers that the garden holds secrets spanning generations — and that some memories are better left buried beneath the moonlit soil.",
         "year": "2022",
         "series": "The Meridian Cycle",
@@ -35,7 +36,7 @@ BOOKS = [
         "title": "Echoes of Tomorrow",
         "author": "Elena Marchetti",
         "narrator": "Sophie Laurent",
-        "duration": 52800.0,
+        "duration": 600.0,
         "description": "In a world where echoes of the future can be heard by those who listen carefully, Dr. Maren Solberg must decide what warnings to heed and which futures to let unfold. A sweeping science fiction epic about fate, free will, and the courage to face the unknown.",
         "year": "2023",
         "series": "The Meridian Cycle",
@@ -47,7 +48,7 @@ BOOKS = [
         "title": "Silent Meridian",
         "author": "Elena Marchetti",
         "narrator": "Sophie Laurent",
-        "duration": 39600.0,
+        "duration": 600.0,
         "description": "The silence between worlds holds a secret that could unravel reality itself. When cartographer Elias Thorne maps an impossible coordinate, he stumbles into a conspiracy that stretches across dimensions. The third volume in the acclaimed Meridian Cycle.",
         "year": "2024",
         "series": "The Meridian Cycle",
@@ -60,7 +61,7 @@ BOOKS = [
         "title": "Beneath the Copper Sky",
         "author": "James Whitmore",
         "narrator": "David Chen",
-        "duration": 34200.0,
+        "duration": 600.0,
         "description": "Under skies turned copper by decades of unchecked industry, a revolution brews in whispered code. Factory worker Nadia discovers she can decode the messages hidden in the smog patterns — messages that could topple an empire or doom a city.",
         "year": "2023",
         "series": "The Copper Age",
@@ -72,7 +73,7 @@ BOOKS = [
         "title": "The Iron Horizon",
         "author": "James Whitmore",
         "narrator": "David Chen",
-        "duration": 38400.0,
+        "duration": 600.0,
         "description": "As Nadia's revolution spreads beyond the factory districts, the regime responds with an iron curtain of surveillance drones. In the wastelands beyond the city, a forgotten technology offers hope — if the rebels can reach it before the copper sky falls.",
         "year": "2024",
         "series": "The Copper Age",
@@ -84,7 +85,7 @@ BOOKS = [
         "title": "Rust and Reckoning",
         "author": "James Whitmore",
         "narrator": "David Chen",
-        "duration": 41000.0,
+        "duration": 600.0,
         "description": "The final confrontation between Nadia's rebels and the industrial oligarchy unfolds across three continents. Ancient machines awaken, alliances shatter, and the true cost of revolution becomes clear in this explosive conclusion to The Copper Age.",
         "year": "2025",
         "series": "The Copper Age",
@@ -97,7 +98,7 @@ BOOKS = [
         "title": "A Thousand Paper Cranes",
         "author": "Aisha Kato",
         "narrator": "Margot Dubois",
-        "duration": 28800.0,
+        "duration": 600.0,
         "description": "A multi-generational story spanning three continents and seventy years, following the Nakamura family from post-war Hiroshima through the bustling streets of 1970s São Paulo to present-day Toronto. Each folded crane carries a wish — and a secret.",
         "year": "2021",
         "series": "The Cartographer's Secret",
@@ -109,7 +110,7 @@ BOOKS = [
         "title": "The Vermillion Map",
         "author": "Aisha Kato",
         "narrator": "Margot Dubois",
-        "duration": 32400.0,
+        "duration": 600.0,
         "description": "When a rare 16th-century map surfaces in a Tokyo auction house, historian Yuki Nakamura recognizes her grandmother's handwriting in the margin notes. The map leads her through the hidden waterways of Venice to a secret her family has protected for generations.",
         "year": "2022",
         "series": "The Cartographer's Secret",
@@ -121,7 +122,7 @@ BOOKS = [
         "title": "Longitude of Shadows",
         "author": "Aisha Kato",
         "narrator": "Margot Dubois",
-        "duration": 35100.0,
+        "duration": 600.0,
         "description": "The final map in the Nakamura collection points to a coordinate that doesn't exist on any modern chart. Yuki races against a shadowy collector's guild to decode the last cartographer's secret before history is rewritten forever.",
         "year": "2023",
         "series": "The Cartographer's Secret",
@@ -134,7 +135,7 @@ BOOKS = [
         "title": "The Clockwork Atlas",
         "author": "Marcus Venn",
         "narrator": "Thomas Ashford",
-        "duration": 46800.0,
+        "duration": 600.0,
         "description": "An atlas that maps not geography but time itself falls into the unlikely hands of a street urchin in Victorian London. As powerful factions close in, young Pip must learn to read the atlas before its knowledge reshapes history forever.",
         "year": "2022",
         "series": "Clockwork Empire",
@@ -146,7 +147,7 @@ BOOKS = [
         "title": "Gears of Rebellion",
         "author": "Marcus Venn",
         "narrator": "Thomas Ashford",
-        "duration": 44200.0,
+        "duration": 600.0,
         "description": "Five years after mastering the atlas, Pip commands an airship fleet of rebels against the Chronarchs — a cabal of time-manipulating aristocrats who've enslaved London's working class. But the atlas reveals a terrible truth: rebellion was always part of their plan.",
         "year": "2023",
         "series": "Clockwork Empire",
@@ -158,7 +159,7 @@ BOOKS = [
         "title": "The Brass Meridian",
         "author": "Marcus Venn",
         "narrator": "Thomas Ashford",
-        "duration": 49000.0,
+        "duration": 600.0,
         "description": "At the brass meridian — the temporal prime meridian running through the heart of a dying clockwork sun — Pip must make the ultimate choice: reset time and erase everything, or let the gears of the universe wind down forever.",
         "year": "2024",
         "series": "Clockwork Empire",
@@ -171,7 +172,7 @@ BOOKS = [
         "title": "Ashes of the Old Road",
         "author": "Lena Voronova",
         "narrator": "Sophie Laurent",
-        "duration": 54000.0,
+        "duration": 600.0,
         "description": "In a world where ancient roads possess memory, wanderer Kael Ashborne walks a forgotten path that leads through the ruins of fallen kingdoms. Each step forward is a step backward in time, and the road demands a price for its secrets.",
         "year": "2023",
         "series": "The Wanderer's Path",
@@ -183,7 +184,7 @@ BOOKS = [
         "title": "The Shattered Compass",
         "author": "Lena Voronova",
         "narrator": "Sophie Laurent",
-        "duration": 48600.0,
+        "duration": 600.0,
         "description": "Kael's journey leads him to the Shattered Compass — a legendary artifact split into four pieces and scattered across the cardinal realms. With each fragment recovered, the old road reveals more of its terrible purpose, and Kael realizes he may be walking toward the end of all paths.",
         "year": "2024",
         "series": "The Wanderer's Path",
@@ -195,7 +196,7 @@ BOOKS = [
         "title": "Where All Roads End",
         "author": "Lena Voronova",
         "narrator": "Sophie Laurent",
-        "duration": 51200.0,
+        "duration": 600.0,
         "description": "At the convergence of every road ever walked, Kael faces the Pathkeeper — the entity that wove the first road from starlight and sorrow. To save the world from unraveling, he must choose: become the new Pathkeeper, or let every road crumble to dust.",
         "year": "2025",
         "series": "The Wanderer's Path",
@@ -205,108 +206,108 @@ BOOKS = [
 ]
 
 PODCAST_EPISODES_P1 = [
-    {"id": "e1", "title": "The Lost Archive of Prague", "duration": 4200.0, "publishedAt": int(time.time() * 1000) - 86400000},
-    {"id": "e2", "title": "Forgotten Voices of the Renaissance", "duration": 3600.0, "publishedAt": int(time.time() * 1000) - 259200000},
-    {"id": "e3", "title": "Manuscripts in the Margins", "duration": 3900.0, "publishedAt": int(time.time() * 1000) - 432000000},
-    {"id": "e4", "title": "Secrets of the Vatican Library", "duration": 3300.0, "publishedAt": int(time.time() * 1000) - 604800000},
-    {"id": "e5", "title": "The Ink Trade Routes", "duration": 2700.0, "publishedAt": int(time.time() * 1000) - 777600000},
+    {"id": "e1", "title": "The Lost Archive of Prague", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 86400000},
+    {"id": "e2", "title": "Forgotten Voices of the Renaissance", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 259200000},
+    {"id": "e3", "title": "Manuscripts in the Margins", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 432000000},
+    {"id": "e4", "title": "Secrets of the Vatican Library", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 604800000},
+    {"id": "e5", "title": "The Ink Trade Routes", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 777600000},
 ]
 
 PODCAST_EPISODES_P2 = [
-    {"id": "e6", "title": "Dark Matter Coffee Break", "duration": 2700.0, "publishedAt": int(time.time() * 1000) - 172800000},
-    {"id": "e7", "title": "Exoplanet Happy Hour", "duration": 3300.0, "publishedAt": int(time.time() * 1000) - 345600000},
-    {"id": "e8", "title": "Nebulae and Lattes", "duration": 2400.0, "publishedAt": int(time.time() * 1000) - 518400000},
-    {"id": "e9", "title": "The Gravity of Good Espresso", "duration": 2100.0, "publishedAt": int(time.time() * 1000) - 691200000},
-    {"id": "e10", "title": "Stellar Origins of Flavor", "duration": 2850.0, "publishedAt": int(time.time() * 1000) - 864000000},
+    {"id": "e6", "title": "Dark Matter Coffee Break", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 172800000},
+    {"id": "e7", "title": "Exoplanet Happy Hour", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 345600000},
+    {"id": "e8", "title": "Nebulae and Lattes", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 518400000},
+    {"id": "e9", "title": "The Gravity of Good Espresso", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 691200000},
+    {"id": "e10", "title": "Stellar Origins of Flavor", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 864000000},
 ]
 
 PODCAST_EPISODES_P3 = [
-    {"id": "e11", "title": "Zero Waste Living", "duration": 2500.0, "publishedAt": int(time.time() * 1000) - 86400000},
-    {"id": "e12", "title": "Circular Economy 101", "duration": 3100.0, "publishedAt": int(time.time() * 1000) - 259200000},
-    {"id": "e13", "title": "Regenerative Agriculture", "duration": 2800.0, "publishedAt": int(time.time() * 1000) - 432000000},
-    {"id": "e14", "title": "The Carbon Footprint Myth", "duration": 3400.0, "publishedAt": int(time.time() * 1000) - 604800000},
-    {"id": "e15", "title": "Ocean Plastic Solutions", "duration": 2600.0, "publishedAt": int(time.time() * 1000) - 777600000},
+    {"id": "e11", "title": "Zero Waste Living", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 86400000},
+    {"id": "e12", "title": "Circular Economy 101", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 259200000},
+    {"id": "e13", "title": "Regenerative Agriculture", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 432000000},
+    {"id": "e14", "title": "The Carbon Footprint Myth", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 604800000},
+    {"id": "e15", "title": "Ocean Plastic Solutions", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 777600000},
 ]
 
 PODCAST_EPISODES_P4 = [
-    {"id": "e16", "title": "Olympus Mons Base Camp", "duration": 3200.0, "publishedAt": int(time.time() * 1000) - 172800000},
-    {"id": "e17", "title": "The First Martian Sunrise", "duration": 2900.0, "publishedAt": int(time.time() * 1000) - 345600000},
-    {"id": "e18", "title": "Terraforming Dreams", "duration": 3600.0, "publishedAt": int(time.time() * 1000) - 518400000},
-    {"id": "e19", "title": "Water on the Red Planet", "duration": 2700.0, "publishedAt": int(time.time() * 1000) - 691200000},
-    {"id": "e20", "title": "Dust Storms and Survival", "duration": 3100.0, "publishedAt": int(time.time() * 1000) - 864000000},
+    {"id": "e16", "title": "Olympus Mons Base Camp", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 172800000},
+    {"id": "e17", "title": "The First Martian Sunrise", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 345600000},
+    {"id": "e18", "title": "Terraforming Dreams", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 518400000},
+    {"id": "e19", "title": "Water on the Red Planet", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 691200000},
+    {"id": "e20", "title": "Dust Storms and Survival", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 864000000},
 ]
 
 PODCAST_EPISODES_P5 = [
-    {"id": "e21", "title": "AI in Your Pocket", "duration": 2400.0, "publishedAt": int(time.time() * 1000) - 86400000},
-    {"id": "e22", "title": "Quantum Computing Simplified", "duration": 3500.0, "publishedAt": int(time.time() * 1000) - 259200000},
-    {"id": "e23", "title": "The Future of Wearables", "duration": 2800.0, "publishedAt": int(time.time() * 1000) - 432000000},
-    {"id": "e24", "title": "Blockchain Beyond Crypto", "duration": 3000.0, "publishedAt": int(time.time() * 1000) - 604800000},
-    {"id": "e25", "title": "5G and the Connected World", "duration": 2600.0, "publishedAt": int(time.time() * 1000) - 777600000},
+    {"id": "e21", "title": "AI in Your Pocket", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 86400000},
+    {"id": "e22", "title": "Quantum Computing Simplified", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 259200000},
+    {"id": "e23", "title": "The Future of Wearables", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 432000000},
+    {"id": "e24", "title": "Blockchain Beyond Crypto", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 604800000},
+    {"id": "e25", "title": "5G and the Connected World", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 777600000},
 ]
 
 PODCAST_EPISODES_P6 = [
-    {"id": "e26", "title": "Election Cycles Decoded", "duration": 3800.0, "publishedAt": int(time.time() * 1000) - 172800000},
-    {"id": "e27", "title": "Diplomacy in the Digital Age", "duration": 3200.0, "publishedAt": int(time.time() * 1000) - 345600000},
-    {"id": "e28", "title": "Trade Wars Explained", "duration": 2900.0, "publishedAt": int(time.time() * 1000) - 518400000},
-    {"id": "e29", "title": "The Rise of City-States", "duration": 3400.0, "publishedAt": int(time.time() * 1000) - 691200000},
-    {"id": "e30", "title": "Democracy Under Pressure", "duration": 3100.0, "publishedAt": int(time.time() * 1000) - 864000000},
+    {"id": "e26", "title": "Election Cycles Decoded", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 172800000},
+    {"id": "e27", "title": "Diplomacy in the Digital Age", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 345600000},
+    {"id": "e28", "title": "Trade Wars Explained", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 518400000},
+    {"id": "e29", "title": "The Rise of City-States", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 691200000},
+    {"id": "e30", "title": "Democracy Under Pressure", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 864000000},
 ]
 
 PODCAST_EPISODES_P7 = [
-    {"id": "e31", "title": "K-Pop's Global Takeover", "duration": 2500.0, "publishedAt": int(time.time() * 1000) - 86400000},
-    {"id": "e32", "title": "Afrobeats Rising", "duration": 2800.0, "publishedAt": int(time.time() * 1000) - 259200000},
-    {"id": "e33", "title": "Latin Music Renaissance", "duration": 3000.0, "publishedAt": int(time.time() * 1000) - 432000000},
-    {"id": "e34", "title": "Sounds of the Silk Road", "duration": 2600.0, "publishedAt": int(time.time() * 1000) - 604800000},
-    {"id": "e35", "title": "Nordic Folk Revival", "duration": 2400.0, "publishedAt": int(time.time() * 1000) - 777600000},
+    {"id": "e31", "title": "K-Pop's Global Takeover", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 86400000},
+    {"id": "e32", "title": "Afrobeats Rising", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 259200000},
+    {"id": "e33", "title": "Latin Music Renaissance", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 432000000},
+    {"id": "e34", "title": "Sounds of the Silk Road", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 604800000},
+    {"id": "e35", "title": "Nordic Folk Revival", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 777600000},
 ]
 
 PODCAST_EPISODES_P8 = [
-    {"id": "e36", "title": "The Mariana Trench Expedition", "duration": 3600.0, "publishedAt": int(time.time() * 1000) - 172800000},
-    {"id": "e37", "title": "Bioluminescent Wonders", "duration": 2700.0, "publishedAt": int(time.time() * 1000) - 345600000},
-    {"id": "e38", "title": "Coral Reef Resurrection", "duration": 3200.0, "publishedAt": int(time.time() * 1000) - 518400000},
-    {"id": "e39", "title": "Giant Squid Encounters", "duration": 2900.0, "publishedAt": int(time.time() * 1000) - 691200000},
-    {"id": "e40", "title": "Underwater Volcanoes", "duration": 3400.0, "publishedAt": int(time.time() * 1000) - 864000000},
+    {"id": "e36", "title": "The Mariana Trench Expedition", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 172800000},
+    {"id": "e37", "title": "Bioluminescent Wonders", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 345600000},
+    {"id": "e38", "title": "Coral Reef Resurrection", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 518400000},
+    {"id": "e39", "title": "Giant Squid Encounters", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 691200000},
+    {"id": "e40", "title": "Underwater Volcanoes", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 864000000},
 ]
 
 PODCAST_EPISODES_P9 = [
-    {"id": "e41", "title": "Crossing the Event Horizon", "duration": 3300.0, "publishedAt": int(time.time() * 1000) - 86400000},
-    {"id": "e42", "title": "Life After Earth", "duration": 2800.0, "publishedAt": int(time.time() * 1000) - 259200000},
-    {"id": "e43", "title": "Interstellar Navigation", "duration": 3100.0, "publishedAt": int(time.time() * 1000) - 432000000},
-    {"id": "e44", "title": "The Dyson Sphere Debate", "duration": 3500.0, "publishedAt": int(time.time() * 1000) - 604800000},
-    {"id": "e45", "title": "First Contact Protocols", "duration": 2600.0, "publishedAt": int(time.time() * 1000) - 777600000},
+    {"id": "e41", "title": "Crossing the Event Horizon", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 86400000},
+    {"id": "e42", "title": "Life After Earth", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 259200000},
+    {"id": "e43", "title": "Interstellar Navigation", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 432000000},
+    {"id": "e44", "title": "The Dyson Sphere Debate", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 604800000},
+    {"id": "e45", "title": "First Contact Protocols", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 777600000},
 ]
 
 PODCAST_EPISODES_P10 = [
-    {"id": "e46", "title": "From Garage to Empire", "duration": 2900.0, "publishedAt": int(time.time() * 1000) - 172800000},
-    {"id": "e47", "title": "The VC Mindset", "duration": 3200.0, "publishedAt": int(time.time() * 1000) - 345600000},
-    {"id": "e48", "title": "Scaling Without Burning Out", "duration": 2700.0, "publishedAt": int(time.time() * 1000) - 518400000},
-    {"id": "e49", "title": "Pivot or Persevere", "duration": 3000.0, "publishedAt": int(time.time() * 1000) - 691200000},
-    {"id": "e50", "title": "Exit Strategies", "duration": 2500.0, "publishedAt": int(time.time() * 1000) - 864000000},
+    {"id": "e46", "title": "From Garage to Empire", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 172800000},
+    {"id": "e47", "title": "The VC Mindset", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 345600000},
+    {"id": "e48", "title": "Scaling Without Burning Out", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 518400000},
+    {"id": "e49", "title": "Pivot or Persevere", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 691200000},
+    {"id": "e50", "title": "Exit Strategies", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 864000000},
 ]
 
 PODCAST_EPISODES_P11 = [
-    {"id": "e51", "title": "The Streaming Wars", "duration": 3400.0, "publishedAt": int(time.time() * 1000) - 86400000},
-    {"id": "e52", "title": "Podcasting's Golden Age", "duration": 2600.0, "publishedAt": int(time.time() * 1000) - 259200000},
-    {"id": "e53", "title": "Social Media Fatigue", "duration": 3100.0, "publishedAt": int(time.time() * 1000) - 432000000},
-    {"id": "e54", "title": "The Newsletter Revolution", "duration": 2800.0, "publishedAt": int(time.time() * 1000) - 604800000},
-    {"id": "e55", "title": "AI-Generated Content", "duration": 3300.0, "publishedAt": int(time.time() * 1000) - 777600000},
+    {"id": "e51", "title": "The Streaming Wars", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 86400000},
+    {"id": "e52", "title": "Podcasting's Golden Age", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 259200000},
+    {"id": "e53", "title": "Social Media Fatigue", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 432000000},
+    {"id": "e54", "title": "The Newsletter Revolution", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 604800000},
+    {"id": "e55", "title": "AI-Generated Content", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 777600000},
 ]
 
 PODCAST_EPISODES_P12 = [
-    {"id": "e56", "title": "Arctic Ice Melt Update", "duration": 3000.0, "publishedAt": int(time.time() * 1000) - 172800000},
-    {"id": "e57", "title": "Wildfires and Wind Patterns", "duration": 3500.0, "publishedAt": int(time.time() * 1000) - 345600000},
-    {"id": "e58", "title": "Rising Seas, Sinking Cities", "duration": 2900.0, "publishedAt": int(time.time() * 1000) - 518400000},
-    {"id": "e59", "title": "Renewable Energy Progress", "duration": 3200.0, "publishedAt": int(time.time() * 1000) - 691200000},
-    {"id": "e60", "title": "The Heat Dome Phenomenon", "duration": 2700.0, "publishedAt": int(time.time() * 1000) - 864000000},
+    {"id": "e56", "title": "Arctic Ice Melt Update", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 172800000},
+    {"id": "e57", "title": "Wildfires and Wind Patterns", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 345600000},
+    {"id": "e58", "title": "Rising Seas, Sinking Cities", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 518400000},
+    {"id": "e59", "title": "Renewable Energy Progress", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 691200000},
+    {"id": "e60", "title": "The Heat Dome Phenomenon", "duration": 600.0, "publishedAt": int(time.time() * 1000) - 864000000},
 ]
 
 PROGRESS = {
-    "b1": {"progress": 0.72, "currentTime": 31104.0, "duration": 43200.0},
-    "b2": {"progress": 0.35, "currentTime": 18480.0, "duration": 52800.0},
-    "b4": {"progress": 0.91, "currentTime": 31122.0, "duration": 34200.0},
-    "b7": {"progress": 0.55, "currentTime": 15840.0, "duration": 28800.0},
-    "b10": {"progress": 0.18, "currentTime": 8424.0, "duration": 46800.0},
-    "b13": {"progress": 0.63, "currentTime": 34020.0, "duration": 54000.0},
+    "b1": {"progress": 0.72, "currentTime": 432.0, "duration": 600.0},
+    "b2": {"progress": 0.35, "currentTime": 210.0, "duration": 600.0},
+    "b4": {"progress": 0.91, "currentTime": 546.0, "duration": 600.0},
+    "b7": {"progress": 0.55, "currentTime": 330.0, "duration": 600.0},
+    "b10": {"progress": 0.18, "currentTime": 108.0, "duration": 600.0},
+    "b13": {"progress": 0.63, "currentTime": 378.0, "duration": 600.0},
 }
 
 # ─── Helper functions ─────────────────────────────────────────────────────────
@@ -928,9 +929,14 @@ def start_playback(item_id, episode_id=None):
             "duration": duration,
             "title": display_title,
             "contentUrl": f"/api/items/{item_id}/file/0",
-            "mimeType": "audio/mp4",
+            "mimeType": "audio/mpeg",
         }],
     })
+
+
+@app.route("/api/items/<item_id>/file/<int:index>", methods=["GET"])
+def get_audio_file(item_id, index):
+    return send_from_directory(AUDIO_DIR, "silence.mp3", mimetype="audio/mpeg")
 
 
 @app.route("/api/session/<session_id>/sync", methods=["POST"])

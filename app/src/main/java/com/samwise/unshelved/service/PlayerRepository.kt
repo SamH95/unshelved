@@ -533,8 +533,17 @@ class PlayerRepository @Inject constructor(
         val endedSession = _playerState.value.session
         closeSession()
         _playerState.update { it.copy(session = null) }
-        if (endedSession?.mediaType != "podcast") return
-        val next = queueRepository.popNext() ?: return
+        if (endedSession?.mediaType != "podcast") {
+            controller?.stop()
+            controller?.clearMediaItems()
+            return
+        }
+        val next = queueRepository.popNext()
+        if (next == null) {
+            controller?.stop()
+            controller?.clearMediaItems()
+            return
+        }
         val serverUrl = prefs.getServerUrl() ?: return
         if (next.episodeId != null) {
             startEpisodePlayback(next.libraryItemId, next.episodeId, serverUrl)
