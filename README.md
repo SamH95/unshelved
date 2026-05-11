@@ -16,7 +16,18 @@ A modern Android client for [Audiobookshelf](https://www.audiobookshelf.org/).
 
 ## Screenshots
 
-*Coming soon*
+<p align="center">
+  <img src="docs/screenshots/audiobooks-home.png" width="24%" />
+  <img src="docs/screenshots/audiobooks-details.png" width="24%" />
+  <img src="docs/screenshots/player.png" width="24%" />
+  <img src="docs/screenshots/player-chapters.png" width="24%" />
+</p>
+<p align="center">
+  <img src="docs/screenshots/audiobooks-library.png" width="24%" />
+  <img src="docs/screenshots/audiobooks-series.png" width="24%" />
+  <img src="docs/screenshots/podcasts-latest.png" width="24%" />
+  <img src="docs/screenshots/downloads.png" width="24%" />
+</p>
 
 ## Requirements
 
