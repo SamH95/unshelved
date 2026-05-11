@@ -1,0 +1,167 @@
+<resources>
+    <string name="app_name">Unshelved</string>
+    <string name="app_subtitle">Cliente Audiobookshelf</string>
+
+    <!-- Auth / Login -->
+    <string name="server_url">URL del servidor</string>
+    <string name="server_url_placeholder">https://mi.servidor.abs</string>
+    <string name="connect">Conectar</string>
+    <string name="username">Nombre de usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="sign_in">Iniciar sesión</string>
+    <string name="sign_in_with_sso">Iniciar sesión con SSO</string>
+    <string name="use_sso_instead">Usar SSO en su lugar</string>
+    <string name="use_password_instead">Usar contraseña en su lugar</string>
+    <string name="show_password">Mostrar contraseña</string>
+    <string name="hide_password">Ocultar contraseña</string>
+    <string name="play_offline_library">Reproducir biblioteca sin conexión</string>
+    <string name="sign_out">Cerrar sesión</string>
+    <string name="sign_out_confirm">¿Estás seguro de que quieres cerrar sesión?</string>
+    <string name="session_expired">Tu sesión ha expirado. Inicia sesión de nuevo.</string>
+
+    <!-- Navigation -->
+    <string name="home">Inicio</string>
+    <string name="library">Biblioteca</string>
+    <string name="settings">Ajustes</string>
+    <string name="search">Buscar</string>
+    <string name="search_hint">Buscar %1$s…</string>
+    <string name="search_audiobooks">Buscar audiolibros…</string>
+    <string name="search_podcasts">Buscar podcasts…</string>
+    <string name="search_new_podcasts">Buscar nuevos podcasts…</string>
+    <string name="back">Atrás</string>
+    <string name="latest">Recientes</string>
+    <string name="series">Series</string>
+    <string name="queue">Cola</string>
+
+    <!-- Home -->
+    <string name="no_content">Aún no hay contenido. ¡Revisa tu biblioteca!</string>
+    <string name="now_playing">Reproduciendo</string>
+    <string name="shelf_continue_listening">Seguir escuchando</string>
+    <string name="shelf_continue_series">Continuar serie</string>
+    <string name="shelf_recently_added">Añadidos recientemente</string>
+    <string name="shelf_newest_episodes">Últimos episodios</string>
+    <string name="shelf_listen_again">Escuchar de nuevo</string>
+    <string name="shelf_discover">Descubrir</string>
+    <string name="shelf_recent_series">Series recientes</string>
+
+    <!-- Library -->
+    <string name="switch_library">Cambiar biblioteca</string>
+    <string name="switch_to_grid">Vista en cuadrícula</string>
+    <string name="switch_to_list">Vista en lista</string>
+    <string name="no_library_selected">Ninguna biblioteca seleccionada</string>
+    <string name="audiobook_library">Biblioteca de audiolibros</string>
+    <string name="podcast_library">Biblioteca de podcasts</string>
+    <string name="clear_filter">Borrar filtro</string>
+
+    <!-- Detail -->
+    <string name="details">Detalles</string>
+    <string name="chapters">Capítulos</string>
+    <string name="chapters_count">%1$d capítulos</string>
+    <string name="author">Autor</string>
+    <string name="narrator">Narrador</string>
+    <string name="genre">Género</string>
+    <string name="play">Reproducir</string>
+    <string name="download">Descargar</string>
+    <string name="downloaded">Descargado</string>
+    <string name="info">Info</string>
+    <string name="read_more">Leer más</string>
+    <string name="show_more">Mostrar más</string>
+    <string name="show_less">Mostrar menos</string>
+    <string name="time_left">%1$s restante</string>
+    <string name="mark_finished">Marcar como terminado</string>
+    <string name="mark_as_finished">Marcar como terminado</string>
+    <string name="mark_unfinished">Marcar como no terminado</string>
+    <string name="finished">Terminado</string>
+    <string name="could_not_load_details">No se pudieron cargar los detalles</string>
+    <string name="year">Año</string>
+    <string name="duration">Duración</string>
+    <string name="progress">Progreso</string>
+    <string name="added">Añadido</string>
+    <string name="not_started">No comenzado</string>
+
+    <!-- Series -->
+    <string name="could_not_load_series">No se pudieron cargar las series</string>
+
+    <!-- Player -->
+    <string name="playback">Reproducción</string>
+    <string name="sleep">Temporizador</string>
+    <string name="jump_back">Saltar atrás</string>
+    <string name="jump_forward">Saltar adelante</string>
+    <string name="cancel_timer">Cancelar temporizador</string>
+    <string name="minutes_format">%1$d minutos</string>
+    <string name="seconds_format">%1$d segundos</string>
+    <string name="more_options">Más opciones</string>
+
+    <!-- Queue -->
+    <string name="queue_empty">La cola está vacía</string>
+    <string name="up_next_count">A continuación (%1$d)</string>
+    <string name="add_to_queue">Añadir a la cola</string>
+    <string name="remove_from_queue">Quitar de la cola</string>
+    <string name="in_queue">En la cola</string>
+    <string name="reorder">Reordenar</string>
+
+    <!-- Downloads -->
+    <string name="manage_downloads">Gestionar descargas</string>
+    <string name="auto_delete_finished">Eliminar terminados</string>
+    <string name="auto_delete_finished_description">Eliminar descargas 7 días después de terminar</string>
+    <string name="no_downloads">Sin descargas</string>
+    <string name="no_downloaded_audiobooks">No hay audiolibros descargados</string>
+    <string name="delete_download">Eliminar descarga</string>
+    <string name="downloading_percent">Descargando… (%1$d%%)</string>
+
+    <!-- Podcasts -->
+    <string name="add_podcast">Añadir podcast</string>
+    <string name="add_to_library">Añadir a la biblioteca</string>
+    <string name="adding_to_library">Añadiendo podcast a la biblioteca…</string>
+    <string name="adding">Añadiendo…</string>
+    <string name="already_added">Ya añadido</string>
+    <string name="auto_download">Descarga automática</string>
+    <string name="auto_download_episodes">Descargar episodios automáticamente</string>
+    <string name="auto_download_description">Descargar nuevos episodios automáticamente</string>
+    <string name="auto_tab_continue">Continuar</string>
+    <string name="auto_tab_recent">Audiolibros recientes</string>
+    <string name="auto_tab_latest">Últimos podcasts</string>
+    <string name="auto_tab_library">Biblioteca</string>
+    <string name="episodes_count">%1$d episodios</string>
+    <string name="latest_episodes_count">Últimos episodios (%1$d)</string>
+    <string name="no_recent_episodes">No hay episodios recientes</string>
+    <string name="downloading_latest">Descargando últimos episodios del servidor…</string>
+    <string name="delete_podcast">Eliminar podcast</string>
+    <string name="delete_podcast_confirm">¿Estás seguro? Esto eliminará permanentemente este podcast y todos sus episodios del servidor. Los episodios descargados en este dispositivo también serán eliminados.</string>
+    <string name="podcast">Podcast</string>
+    <string name="episode_info">Info del episodio</string>
+    <string name="cast">Cast</string>
+    <string name="casting">Casting</string>
+
+    <!-- Settings -->
+    <string name="connected_to_server">Conectado al servidor</string>
+    <string name="offline_mode">Modo sin conexión</string>
+    <string name="offline_only_message">Solo la biblioteca sin conexión y los ajustes son visibles</string>
+    <string name="offline_library">Biblioteca sin conexión</string>
+    <string name="no_connection">Sin conexión disponible</string>
+
+    <!-- General -->
+    <string name="cancel">Cancelar</string>
+    <string name="delete">Eliminar</string>
+    <string name="remove">Quitar</string>
+    <string name="clear">Borrar</string>
+    <string name="none">Ninguno</string>
+    <string name="cancel_selection">Cancelar selección</string>
+    <string name="selected_count">%1$d seleccionados</string>
+
+    <!-- Language -->
+    <string name="language">Idioma</string>
+    <string name="language_automatic">Automático</string>
+    <string name="language_english">English</string>
+    <string name="language_german">Deutsch</string>
+    <string name="language_french">Français</string>
+    <string name="language_italian">Italiano</string>
+    <string name="language_spanish">Español</string>
+    <string name="language_portuguese">Português</string>
+    <string name="language_polish">Polski</string>
+    <string name="language_ukrainian">Українська</string>
+    <string name="language_russian">Русский</string>
+    <string name="language_greek">Ελληνικά</string>
+    <string name="language_chinese">中文</string>
+    <string name="language_japanese">日本語</string>
+</resources>

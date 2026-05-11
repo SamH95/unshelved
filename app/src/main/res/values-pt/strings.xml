@@ -1,0 +1,167 @@
+<resources>
+    <string name="app_name">Unshelved</string>
+    <string name="app_subtitle">Cliente Audiobookshelf</string>
+
+    <!-- Auth / Login -->
+    <string name="server_url">URL do servidor</string>
+    <string name="server_url_placeholder">https://meu.servidor.abs</string>
+    <string name="connect">Conectar</string>
+    <string name="username">Nome de utilizador</string>
+    <string name="password">Palavra-passe</string>
+    <string name="sign_in">Entrar</string>
+    <string name="sign_in_with_sso">Entrar com SSO</string>
+    <string name="use_sso_instead">Usar SSO em vez disso</string>
+    <string name="use_password_instead">Usar palavra-passe em vez disso</string>
+    <string name="show_password">Mostrar palavra-passe</string>
+    <string name="hide_password">Ocultar palavra-passe</string>
+    <string name="play_offline_library">Reproduzir biblioteca offline</string>
+    <string name="sign_out">Terminar sessão</string>
+    <string name="sign_out_confirm">Tem a certeza de que quer terminar sessão?</string>
+    <string name="session_expired">A sua sessão expirou. Inicie sessão novamente.</string>
+
+    <!-- Navigation -->
+    <string name="home">Início</string>
+    <string name="library">Biblioteca</string>
+    <string name="settings">Definições</string>
+    <string name="search">Pesquisar</string>
+    <string name="search_hint">Pesquisar %1$s…</string>
+    <string name="search_audiobooks">Pesquisar audiolivros…</string>
+    <string name="search_podcasts">Pesquisar podcasts…</string>
+    <string name="search_new_podcasts">Pesquisar novos podcasts…</string>
+    <string name="back">Voltar</string>
+    <string name="latest">Recentes</string>
+    <string name="series">Séries</string>
+    <string name="queue">Fila</string>
+
+    <!-- Home -->
+    <string name="no_content">Ainda sem conteúdo. Verifique a sua biblioteca!</string>
+    <string name="now_playing">A reproduzir</string>
+    <string name="shelf_continue_listening">Continuar a ouvir</string>
+    <string name="shelf_continue_series">Continuar série</string>
+    <string name="shelf_recently_added">Adicionados recentemente</string>
+    <string name="shelf_newest_episodes">Episódios mais recentes</string>
+    <string name="shelf_listen_again">Ouvir novamente</string>
+    <string name="shelf_discover">Descobrir</string>
+    <string name="shelf_recent_series">Séries recentes</string>
+
+    <!-- Library -->
+    <string name="switch_library">Mudar de biblioteca</string>
+    <string name="switch_to_grid">Vista em grelha</string>
+    <string name="switch_to_list">Vista em lista</string>
+    <string name="no_library_selected">Nenhuma biblioteca selecionada</string>
+    <string name="audiobook_library">Biblioteca de audiolivros</string>
+    <string name="podcast_library">Biblioteca de podcasts</string>
+    <string name="clear_filter">Limpar filtro</string>
+
+    <!-- Detail -->
+    <string name="details">Detalhes</string>
+    <string name="chapters">Capítulos</string>
+    <string name="chapters_count">%1$d capítulos</string>
+    <string name="author">Autor</string>
+    <string name="narrator">Narrador</string>
+    <string name="genre">Género</string>
+    <string name="play">Reproduzir</string>
+    <string name="download">Transferir</string>
+    <string name="downloaded">Transferido</string>
+    <string name="info">Info</string>
+    <string name="read_more">Ler mais</string>
+    <string name="show_more">Mostrar mais</string>
+    <string name="show_less">Mostrar menos</string>
+    <string name="time_left">%1$s restante</string>
+    <string name="mark_finished">Marcar como concluído</string>
+    <string name="mark_as_finished">Marcar como concluído</string>
+    <string name="mark_unfinished">Marcar como não concluído</string>
+    <string name="finished">Concluído</string>
+    <string name="could_not_load_details">Não foi possível carregar os detalhes</string>
+    <string name="year">Ano</string>
+    <string name="duration">Duração</string>
+    <string name="progress">Progresso</string>
+    <string name="added">Adicionado</string>
+    <string name="not_started">Não iniciado</string>
+
+    <!-- Series -->
+    <string name="could_not_load_series">Não foi possível carregar as séries</string>
+
+    <!-- Player -->
+    <string name="playback">Reprodução</string>
+    <string name="sleep">Temporizador</string>
+    <string name="jump_back">Saltar para trás</string>
+    <string name="jump_forward">Saltar para a frente</string>
+    <string name="cancel_timer">Cancelar temporizador</string>
+    <string name="minutes_format">%1$d minutos</string>
+    <string name="seconds_format">%1$d segundos</string>
+    <string name="more_options">Mais opções</string>
+
+    <!-- Queue -->
+    <string name="queue_empty">A fila está vazia</string>
+    <string name="up_next_count">A seguir (%1$d)</string>
+    <string name="add_to_queue">Adicionar à fila</string>
+    <string name="remove_from_queue">Remover da fila</string>
+    <string name="in_queue">Na fila</string>
+    <string name="reorder">Reordenar</string>
+
+    <!-- Downloads -->
+    <string name="manage_downloads">Gerir transferências</string>
+    <string name="auto_delete_finished">Eliminar concluídos</string>
+    <string name="auto_delete_finished_description">Remover transferências 7 dias após conclusão</string>
+    <string name="no_downloads">Sem transferências</string>
+    <string name="no_downloaded_audiobooks">Nenhum audiolivro transferido</string>
+    <string name="delete_download">Eliminar transferência</string>
+    <string name="downloading_percent">A transferir… (%1$d%%)</string>
+
+    <!-- Podcasts -->
+    <string name="add_podcast">Adicionar podcast</string>
+    <string name="add_to_library">Adicionar à biblioteca</string>
+    <string name="adding_to_library">A adicionar podcast à biblioteca…</string>
+    <string name="adding">A adicionar…</string>
+    <string name="already_added">Já adicionado</string>
+    <string name="auto_download">Transferência automática</string>
+    <string name="auto_download_episodes">Transferir episódios automaticamente</string>
+    <string name="auto_download_description">Transferir novos episódios automaticamente</string>
+    <string name="auto_tab_continue">Continuar</string>
+    <string name="auto_tab_recent">Audiolivros recentes</string>
+    <string name="auto_tab_latest">Últimos podcasts</string>
+    <string name="auto_tab_library">Biblioteca</string>
+    <string name="episodes_count">%1$d episódios</string>
+    <string name="latest_episodes_count">Últimos episódios (%1$d)</string>
+    <string name="no_recent_episodes">Sem episódios recentes</string>
+    <string name="downloading_latest">A transferir últimos episódios do servidor…</string>
+    <string name="delete_podcast">Eliminar podcast</string>
+    <string name="delete_podcast_confirm">Tem a certeza? Isto eliminará permanentemente este podcast e todos os seus episódios do servidor. Os episódios transferidos neste dispositivo também serão removidos.</string>
+    <string name="podcast">Podcast</string>
+    <string name="episode_info">Info do episódio</string>
+    <string name="cast">Cast</string>
+    <string name="casting">Casting</string>
+
+    <!-- Settings -->
+    <string name="connected_to_server">Ligado ao servidor</string>
+    <string name="offline_mode">Modo offline</string>
+    <string name="offline_only_message">Apenas a biblioteca offline e as definições estão visíveis</string>
+    <string name="offline_library">Biblioteca offline</string>
+    <string name="no_connection">Sem ligação disponível</string>
+
+    <!-- General -->
+    <string name="cancel">Cancelar</string>
+    <string name="delete">Eliminar</string>
+    <string name="remove">Remover</string>
+    <string name="clear">Limpar</string>
+    <string name="none">Nenhum</string>
+    <string name="cancel_selection">Cancelar seleção</string>
+    <string name="selected_count">%1$d selecionados</string>
+
+    <!-- Language -->
+    <string name="language">Idioma</string>
+    <string name="language_automatic">Automático</string>
+    <string name="language_english">English</string>
+    <string name="language_german">Deutsch</string>
+    <string name="language_french">Français</string>
+    <string name="language_italian">Italiano</string>
+    <string name="language_spanish">Español</string>
+    <string name="language_portuguese">Português</string>
+    <string name="language_polish">Polski</string>
+    <string name="language_ukrainian">Українська</string>
+    <string name="language_russian">Русский</string>
+    <string name="language_greek">Ελληνικά</string>
+    <string name="language_chinese">中文</string>
+    <string name="language_japanese">日本語</string>
+</resources>

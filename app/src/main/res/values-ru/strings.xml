@@ -1,0 +1,167 @@
+<resources>
+    <string name="app_name">Unshelved</string>
+    <string name="app_subtitle">Клиент Audiobookshelf</string>
+
+    <!-- Auth / Login -->
+    <string name="server_url">URL сервера</string>
+    <string name="server_url_placeholder">https://мой.сервер.abs</string>
+    <string name="connect">Подключить</string>
+    <string name="username">Имя пользователя</string>
+    <string name="password">Пароль</string>
+    <string name="sign_in">Войти</string>
+    <string name="sign_in_with_sso">Войти через SSO</string>
+    <string name="use_sso_instead">Использовать SSO</string>
+    <string name="use_password_instead">Использовать пароль</string>
+    <string name="show_password">Показать пароль</string>
+    <string name="hide_password">Скрыть пароль</string>
+    <string name="play_offline_library">Воспроизвести офлайн-библиотеку</string>
+    <string name="sign_out">Выйти</string>
+    <string name="sign_out_confirm">Вы уверены, что хотите выйти?</string>
+    <string name="session_expired">Сессия истекла. Войдите снова.</string>
+
+    <!-- Navigation -->
+    <string name="home">Главная</string>
+    <string name="library">Библиотека</string>
+    <string name="settings">Настройки</string>
+    <string name="search">Поиск</string>
+    <string name="search_hint">Искать %1$s…</string>
+    <string name="search_audiobooks">Искать аудиокниги…</string>
+    <string name="search_podcasts">Искать подкасты…</string>
+    <string name="search_new_podcasts">Искать новые подкасты…</string>
+    <string name="back">Назад</string>
+    <string name="latest">Последние</string>
+    <string name="series">Серии</string>
+    <string name="queue">Очередь</string>
+
+    <!-- Home -->
+    <string name="no_content">Контента пока нет. Проверьте библиотеку!</string>
+    <string name="now_playing">Сейчас воспроизводится</string>
+    <string name="shelf_continue_listening">Продолжить слушать</string>
+    <string name="shelf_continue_series">Продолжить серию</string>
+    <string name="shelf_recently_added">Недавно добавленные</string>
+    <string name="shelf_newest_episodes">Новейшие эпизоды</string>
+    <string name="shelf_listen_again">Послушать снова</string>
+    <string name="shelf_discover">Открыть для себя</string>
+    <string name="shelf_recent_series">Недавние серии</string>
+
+    <!-- Library -->
+    <string name="switch_library">Сменить библиотеку</string>
+    <string name="switch_to_grid">Вид сетки</string>
+    <string name="switch_to_list">Вид списка</string>
+    <string name="no_library_selected">Библиотека не выбрана</string>
+    <string name="audiobook_library">Библиотека аудиокниг</string>
+    <string name="podcast_library">Библиотека подкастов</string>
+    <string name="clear_filter">Очистить фильтр</string>
+
+    <!-- Detail -->
+    <string name="details">Подробности</string>
+    <string name="chapters">Главы</string>
+    <string name="chapters_count">%1$d глав</string>
+    <string name="author">Автор</string>
+    <string name="narrator">Чтец</string>
+    <string name="genre">Жанр</string>
+    <string name="play">Воспроизвести</string>
+    <string name="download">Скачать</string>
+    <string name="downloaded">Скачано</string>
+    <string name="info">Инфо</string>
+    <string name="read_more">Подробнее</string>
+    <string name="show_more">Показать ещё</string>
+    <string name="show_less">Показать меньше</string>
+    <string name="time_left">Осталось %1$s</string>
+    <string name="mark_finished">Отметить как завершённое</string>
+    <string name="mark_as_finished">Отметить как завершённое</string>
+    <string name="mark_unfinished">Отметить как незавершённое</string>
+    <string name="finished">Завершено</string>
+    <string name="could_not_load_details">Не удалось загрузить подробности</string>
+    <string name="year">Год</string>
+    <string name="duration">Длительность</string>
+    <string name="progress">Прогресс</string>
+    <string name="added">Добавлено</string>
+    <string name="not_started">Не начато</string>
+
+    <!-- Series -->
+    <string name="could_not_load_series">Не удалось загрузить серии</string>
+
+    <!-- Player -->
+    <string name="playback">Воспроизведение</string>
+    <string name="sleep">Таймер сна</string>
+    <string name="jump_back">Назад</string>
+    <string name="jump_forward">Вперёд</string>
+    <string name="cancel_timer">Отменить таймер</string>
+    <string name="minutes_format">%1$d минут</string>
+    <string name="seconds_format">%1$d секунд</string>
+    <string name="more_options">Ещё</string>
+
+    <!-- Queue -->
+    <string name="queue_empty">Очередь пуста</string>
+    <string name="up_next_count">Далее (%1$d)</string>
+    <string name="add_to_queue">Добавить в очередь</string>
+    <string name="remove_from_queue">Убрать из очереди</string>
+    <string name="in_queue">В очереди</string>
+    <string name="reorder">Изменить порядок</string>
+
+    <!-- Downloads -->
+    <string name="manage_downloads">Управление загрузками</string>
+    <string name="auto_delete_finished">Удалять завершённые</string>
+    <string name="auto_delete_finished_description">Удалять загрузки через 7 дней после завершения</string>
+    <string name="no_downloads">Нет загрузок</string>
+    <string name="no_downloaded_audiobooks">Нет скачанных аудиокниг</string>
+    <string name="delete_download">Удалить загрузку</string>
+    <string name="downloading_percent">Загрузка… (%1$d%%)</string>
+
+    <!-- Podcasts -->
+    <string name="add_podcast">Добавить подкаст</string>
+    <string name="add_to_library">Добавить в библиотеку</string>
+    <string name="adding_to_library">Добавление подкаста в библиотеку…</string>
+    <string name="adding">Добавление…</string>
+    <string name="already_added">Уже добавлено</string>
+    <string name="auto_download">Автозагрузка</string>
+    <string name="auto_download_episodes">Автоматически скачивать эпизоды</string>
+    <string name="auto_download_description">Автоматически скачивать новые эпизоды</string>
+    <string name="auto_tab_continue">Продолжить</string>
+    <string name="auto_tab_recent">Новые аудиокниги</string>
+    <string name="auto_tab_latest">Последние подкасты</string>
+    <string name="auto_tab_library">Библиотека</string>
+    <string name="episodes_count">%1$d эпизодов</string>
+    <string name="latest_episodes_count">Последние эпизоды (%1$d)</string>
+    <string name="no_recent_episodes">Нет новых эпизодов</string>
+    <string name="downloading_latest">Загрузка последних эпизодов с сервера…</string>
+    <string name="delete_podcast">Удалить подкаст</string>
+    <string name="delete_podcast_confirm">Вы уверены? Это навсегда удалит подкаст и все его эпизоды с сервера. Скачанные эпизоды на этом устройстве тоже будут удалены.</string>
+    <string name="podcast">Подкаст</string>
+    <string name="episode_info">Инфо об эпизоде</string>
+    <string name="cast">Cast</string>
+    <string name="casting">Casting</string>
+
+    <!-- Settings -->
+    <string name="connected_to_server">Подключено к серверу</string>
+    <string name="offline_mode">Офлайн-режим</string>
+    <string name="offline_only_message">Видны только офлайн-библиотека и настройки</string>
+    <string name="offline_library">Офлайн-библиотека</string>
+    <string name="no_connection">Нет соединения</string>
+
+    <!-- General -->
+    <string name="cancel">Отмена</string>
+    <string name="delete">Удалить</string>
+    <string name="remove">Убрать</string>
+    <string name="clear">Очистить</string>
+    <string name="none">Нет</string>
+    <string name="cancel_selection">Отменить выбор</string>
+    <string name="selected_count">Выбрано: %1$d</string>
+
+    <!-- Language -->
+    <string name="language">Язык</string>
+    <string name="language_automatic">Автоматически</string>
+    <string name="language_english">English</string>
+    <string name="language_german">Deutsch</string>
+    <string name="language_french">Français</string>
+    <string name="language_italian">Italiano</string>
+    <string name="language_spanish">Español</string>
+    <string name="language_portuguese">Português</string>
+    <string name="language_polish">Polski</string>
+    <string name="language_ukrainian">Українська</string>
+    <string name="language_russian">Русский</string>
+    <string name="language_greek">Ελληνικά</string>
+    <string name="language_chinese">中文</string>
+    <string name="language_japanese">日本語</string>
+</resources>

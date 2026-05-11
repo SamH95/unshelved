@@ -1,0 +1,3 @@
+<resources>
+    <style name="Theme.Unshelved" parent="Theme.AppCompat.DayNight.NoActionBar" />
+</resources>

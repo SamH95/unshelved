@@ -1,0 +1,8 @@
+<resources>
+    <style name="Theme.Unshelved" parent="Theme.AppCompat.DayNight.NoActionBar" />
+    <style name="Theme.Unshelved.CastDialog" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:colorBackground">#FFFFFFFF</item>
+        <item name="colorPrimary">#FF6200EE</item>
+        <item name="colorAccent">#FF6200EE</item>
+    </style>
+</resources>

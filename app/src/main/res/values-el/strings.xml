@@ -1,0 +1,167 @@
+<resources>
+    <string name="app_name">Unshelved</string>
+    <string name="app_subtitle">Πελάτης Audiobookshelf</string>
+
+    <!-- Auth / Login -->
+    <string name="server_url">URL διακομιστή</string>
+    <string name="server_url_placeholder">https://ο.διακομιστής.μου</string>
+    <string name="connect">Σύνδεση</string>
+    <string name="username">Όνομα χρήστη</string>
+    <string name="password">Κωδικός πρόσβασης</string>
+    <string name="sign_in">Είσοδος</string>
+    <string name="sign_in_with_sso">Είσοδος με SSO</string>
+    <string name="use_sso_instead">Χρήση SSO</string>
+    <string name="use_password_instead">Χρήση κωδικού</string>
+    <string name="show_password">Εμφάνιση κωδικού</string>
+    <string name="hide_password">Απόκρυψη κωδικού</string>
+    <string name="play_offline_library">Αναπαραγωγή βιβλιοθήκης εκτός σύνδεσης</string>
+    <string name="sign_out">Αποσύνδεση</string>
+    <string name="sign_out_confirm">Είστε σίγουροι ότι θέλετε να αποσυνδεθείτε;</string>
+    <string name="session_expired">Η συνεδρία σας έληξε. Συνδεθείτε ξανά.</string>
+
+    <!-- Navigation -->
+    <string name="home">Αρχική</string>
+    <string name="library">Βιβλιοθήκη</string>
+    <string name="settings">Ρυθμίσεις</string>
+    <string name="search">Αναζήτηση</string>
+    <string name="search_hint">Αναζήτηση %1$s…</string>
+    <string name="search_audiobooks">Αναζήτηση ηχοβιβλίων…</string>
+    <string name="search_podcasts">Αναζήτηση podcast…</string>
+    <string name="search_new_podcasts">Αναζήτηση νέων podcast…</string>
+    <string name="back">Πίσω</string>
+    <string name="latest">Πρόσφατα</string>
+    <string name="series">Σειρές</string>
+    <string name="queue">Ουρά</string>
+
+    <!-- Home -->
+    <string name="no_content">Δεν υπάρχει περιεχόμενο. Ελέγξτε τη βιβλιοθήκη σας!</string>
+    <string name="now_playing">Αναπαράγεται τώρα</string>
+    <string name="shelf_continue_listening">Συνέχεια ακρόασης</string>
+    <string name="shelf_continue_series">Συνέχεια σειράς</string>
+    <string name="shelf_recently_added">Πρόσφατες προσθήκες</string>
+    <string name="shelf_newest_episodes">Νεότερα επεισόδια</string>
+    <string name="shelf_listen_again">Ακούστε ξανά</string>
+    <string name="shelf_discover">Ανακαλύψτε</string>
+    <string name="shelf_recent_series">Πρόσφατες σειρές</string>
+
+    <!-- Library -->
+    <string name="switch_library">Αλλαγή βιβλιοθήκης</string>
+    <string name="switch_to_grid">Προβολή πλέγματος</string>
+    <string name="switch_to_list">Προβολή λίστας</string>
+    <string name="no_library_selected">Δεν επιλέχθηκε βιβλιοθήκη</string>
+    <string name="audiobook_library">Βιβλιοθήκη ηχοβιβλίων</string>
+    <string name="podcast_library">Βιβλιοθήκη podcast</string>
+    <string name="clear_filter">Εκκαθάριση φίλτρου</string>
+
+    <!-- Detail -->
+    <string name="details">Λεπτομέρειες</string>
+    <string name="chapters">Κεφάλαια</string>
+    <string name="chapters_count">%1$d κεφάλαια</string>
+    <string name="author">Συγγραφέας</string>
+    <string name="narrator">Αφηγητής</string>
+    <string name="genre">Είδος</string>
+    <string name="play">Αναπαραγωγή</string>
+    <string name="download">Λήψη</string>
+    <string name="downloaded">Ληφθέν</string>
+    <string name="info">Πληροφορίες</string>
+    <string name="read_more">Διαβάστε περισσότερα</string>
+    <string name="show_more">Εμφάνιση περισσότερων</string>
+    <string name="show_less">Εμφάνιση λιγότερων</string>
+    <string name="time_left">Απομένουν %1$s</string>
+    <string name="mark_finished">Σήμανση ως ολοκληρωμένο</string>
+    <string name="mark_as_finished">Σήμανση ως ολοκληρωμένο</string>
+    <string name="mark_unfinished">Σήμανση ως μη ολοκληρωμένο</string>
+    <string name="finished">Ολοκληρώθηκε</string>
+    <string name="could_not_load_details">Αδυναμία φόρτωσης λεπτομερειών</string>
+    <string name="year">Έτος</string>
+    <string name="duration">Διάρκεια</string>
+    <string name="progress">Πρόοδος</string>
+    <string name="added">Προστέθηκε</string>
+    <string name="not_started">Δεν ξεκίνησε</string>
+
+    <!-- Series -->
+    <string name="could_not_load_series">Αδυναμία φόρτωσης σειρών</string>
+
+    <!-- Player -->
+    <string name="playback">Αναπαραγωγή</string>
+    <string name="sleep">Χρονοδιακόπτης</string>
+    <string name="jump_back">Πίσω</string>
+    <string name="jump_forward">Μπροστά</string>
+    <string name="cancel_timer">Ακύρωση χρονοδιακόπτη</string>
+    <string name="minutes_format">%1$d λεπτά</string>
+    <string name="seconds_format">%1$d δευτερόλεπτα</string>
+    <string name="more_options">Περισσότερες επιλογές</string>
+
+    <!-- Queue -->
+    <string name="queue_empty">Η ουρά είναι κενή</string>
+    <string name="up_next_count">Επόμενα (%1$d)</string>
+    <string name="add_to_queue">Προσθήκη στην ουρά</string>
+    <string name="remove_from_queue">Αφαίρεση από την ουρά</string>
+    <string name="in_queue">Στην ουρά</string>
+    <string name="reorder">Αναδιάταξη</string>
+
+    <!-- Downloads -->
+    <string name="manage_downloads">Διαχείριση λήψεων</string>
+    <string name="auto_delete_finished">Διαγραφή ολοκληρωμένων</string>
+    <string name="auto_delete_finished_description">Αφαίρεση λήψεων 7 ημέρες μετά την ολοκλήρωση</string>
+    <string name="no_downloads">Χωρίς λήψεις</string>
+    <string name="no_downloaded_audiobooks">Δεν υπάρχουν ηχοβιβλία</string>
+    <string name="delete_download">Διαγραφή λήψης</string>
+    <string name="downloading_percent">Λήψη… (%1$d%%)</string>
+
+    <!-- Podcasts -->
+    <string name="add_podcast">Προσθήκη podcast</string>
+    <string name="add_to_library">Προσθήκη στη βιβλιοθήκη</string>
+    <string name="adding_to_library">Προσθήκη podcast στη βιβλιοθήκη…</string>
+    <string name="adding">Προσθήκη…</string>
+    <string name="already_added">Ήδη προστέθηκε</string>
+    <string name="auto_download">Αυτόματη λήψη</string>
+    <string name="auto_download_episodes">Αυτόματη λήψη επεισοδίων</string>
+    <string name="auto_download_description">Αυτόματη λήψη νέων επεισοδίων</string>
+    <string name="auto_tab_continue">Συνέχεια</string>
+    <string name="auto_tab_recent">Πρόσφατα ηχοβιβλία</string>
+    <string name="auto_tab_latest">Τελευταία podcast</string>
+    <string name="auto_tab_library">Βιβλιοθήκη</string>
+    <string name="episodes_count">%1$d επεισόδια</string>
+    <string name="latest_episodes_count">Τελευταία επεισόδια (%1$d)</string>
+    <string name="no_recent_episodes">Χωρίς πρόσφατα επεισόδια</string>
+    <string name="downloading_latest">Λήψη τελευταίων επεισοδίων από τον διακομιστή…</string>
+    <string name="delete_podcast">Διαγραφή podcast</string>
+    <string name="delete_podcast_confirm">Είστε σίγουροι; Αυτό θα διαγράψει μόνιμα το podcast και όλα τα επεισόδιά του από τον διακομιστή. Τα ληφθέντα επεισόδια σε αυτή τη συσκευή θα αφαιρεθούν επίσης.</string>
+    <string name="podcast">Podcast</string>
+    <string name="episode_info">Πληροφορίες επεισοδίου</string>
+    <string name="cast">Cast</string>
+    <string name="casting">Casting</string>
+
+    <!-- Settings -->
+    <string name="connected_to_server">Συνδεδεμένο στον διακομιστή</string>
+    <string name="offline_mode">Λειτουργία εκτός σύνδεσης</string>
+    <string name="offline_only_message">Μόνο η βιβλιοθήκη εκτός σύνδεσης και οι ρυθμίσεις είναι ορατές</string>
+    <string name="offline_library">Βιβλιοθήκη εκτός σύνδεσης</string>
+    <string name="no_connection">Δεν υπάρχει σύνδεση</string>
+
+    <!-- General -->
+    <string name="cancel">Ακύρωση</string>
+    <string name="delete">Διαγραφή</string>
+    <string name="remove">Αφαίρεση</string>
+    <string name="clear">Εκκαθάριση</string>
+    <string name="none">Κανένα</string>
+    <string name="cancel_selection">Ακύρωση επιλογής</string>
+    <string name="selected_count">%1$d επιλεγμένα</string>
+
+    <!-- Language -->
+    <string name="language">Γλώσσα</string>
+    <string name="language_automatic">Αυτόματα</string>
+    <string name="language_english">English</string>
+    <string name="language_german">Deutsch</string>
+    <string name="language_french">Français</string>
+    <string name="language_italian">Italiano</string>
+    <string name="language_spanish">Español</string>
+    <string name="language_portuguese">Português</string>
+    <string name="language_polish">Polski</string>
+    <string name="language_ukrainian">Українська</string>
+    <string name="language_russian">Русский</string>
+    <string name="language_greek">Ελληνικά</string>
+    <string name="language_chinese">中文</string>
+    <string name="language_japanese">日本語</string>
+</resources>

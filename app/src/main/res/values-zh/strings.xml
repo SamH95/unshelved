@@ -1,0 +1,167 @@
+<resources>
+    <string name="app_name">Unshelved</string>
+    <string name="app_subtitle">Audiobookshelf 客户端</string>
+
+    <!-- Auth / Login -->
+    <string name="server_url">服务器地址</string>
+    <string name="server_url_placeholder">https://my.abs.server</string>
+    <string name="connect">连接</string>
+    <string name="username">用户名</string>
+    <string name="password">密码</string>
+    <string name="sign_in">登录</string>
+    <string name="sign_in_with_sso">SSO 登录</string>
+    <string name="use_sso_instead">使用 SSO</string>
+    <string name="use_password_instead">使用密码</string>
+    <string name="show_password">显示密码</string>
+    <string name="hide_password">隐藏密码</string>
+    <string name="play_offline_library">播放离线库</string>
+    <string name="sign_out">退出登录</string>
+    <string name="sign_out_confirm">确定要退出登录吗？</string>
+    <string name="session_expired">会话已过期，请重新登录。</string>
+
+    <!-- Navigation -->
+    <string name="home">首页</string>
+    <string name="library">书库</string>
+    <string name="settings">设置</string>
+    <string name="search">搜索</string>
+    <string name="search_hint">搜索%1$s…</string>
+    <string name="search_audiobooks">搜索有声书…</string>
+    <string name="search_podcasts">搜索播客…</string>
+    <string name="search_new_podcasts">搜索新播客…</string>
+    <string name="back">返回</string>
+    <string name="latest">最新</string>
+    <string name="series">系列</string>
+    <string name="queue">队列</string>
+
+    <!-- Home -->
+    <string name="no_content">暂无内容，请检查书库！</string>
+    <string name="now_playing">正在播放</string>
+    <string name="shelf_continue_listening">继续收听</string>
+    <string name="shelf_continue_series">继续系列</string>
+    <string name="shelf_recently_added">最近添加</string>
+    <string name="shelf_newest_episodes">最新单集</string>
+    <string name="shelf_listen_again">再听一次</string>
+    <string name="shelf_discover">发现</string>
+    <string name="shelf_recent_series">近期系列</string>
+
+    <!-- Library -->
+    <string name="switch_library">切换书库</string>
+    <string name="switch_to_grid">网格视图</string>
+    <string name="switch_to_list">列表视图</string>
+    <string name="no_library_selected">未选择书库</string>
+    <string name="audiobook_library">有声书库</string>
+    <string name="podcast_library">播客库</string>
+    <string name="clear_filter">清除筛选</string>
+
+    <!-- Detail -->
+    <string name="details">详情</string>
+    <string name="chapters">章节</string>
+    <string name="chapters_count">%1$d 个章节</string>
+    <string name="author">作者</string>
+    <string name="narrator">朗读者</string>
+    <string name="genre">类型</string>
+    <string name="play">播放</string>
+    <string name="download">下载</string>
+    <string name="downloaded">已下载</string>
+    <string name="info">信息</string>
+    <string name="read_more">阅读更多</string>
+    <string name="show_more">展开</string>
+    <string name="show_less">收起</string>
+    <string name="time_left">剩余 %1$s</string>
+    <string name="mark_finished">标记为已完成</string>
+    <string name="mark_as_finished">标记为已完成</string>
+    <string name="mark_unfinished">标记为未完成</string>
+    <string name="finished">已完成</string>
+    <string name="could_not_load_details">无法加载详情</string>
+    <string name="year">年份</string>
+    <string name="duration">时长</string>
+    <string name="progress">进度</string>
+    <string name="added">添加时间</string>
+    <string name="not_started">未开始</string>
+
+    <!-- Series -->
+    <string name="could_not_load_series">无法加载系列</string>
+
+    <!-- Player -->
+    <string name="playback">播放</string>
+    <string name="sleep">睡眠定时</string>
+    <string name="jump_back">后退</string>
+    <string name="jump_forward">前进</string>
+    <string name="cancel_timer">取消定时</string>
+    <string name="minutes_format">%1$d 分钟</string>
+    <string name="seconds_format">%1$d 秒</string>
+    <string name="more_options">更多选项</string>
+
+    <!-- Queue -->
+    <string name="queue_empty">队列为空</string>
+    <string name="up_next_count">接下来 (%1$d)</string>
+    <string name="add_to_queue">加入队列</string>
+    <string name="remove_from_queue">从队列移除</string>
+    <string name="in_queue">已在队列中</string>
+    <string name="reorder">重新排序</string>
+
+    <!-- Downloads -->
+    <string name="manage_downloads">管理下载</string>
+    <string name="auto_delete_finished">自动删除已完成</string>
+    <string name="auto_delete_finished_description">完成 7 天后自动删除下载</string>
+    <string name="no_downloads">暂无下载</string>
+    <string name="no_downloaded_audiobooks">没有已下载的有声书</string>
+    <string name="delete_download">删除下载</string>
+    <string name="downloading_percent">下载中… (%1$d%%)</string>
+
+    <!-- Podcasts -->
+    <string name="add_podcast">添加播客</string>
+    <string name="add_to_library">添加到书库</string>
+    <string name="adding_to_library">正在将播客添加到书库…</string>
+    <string name="adding">正在添加…</string>
+    <string name="already_added">已添加</string>
+    <string name="auto_download">自动下载</string>
+    <string name="auto_download_episodes">自动下载单集</string>
+    <string name="auto_download_description">自动下载新单集</string>
+    <string name="auto_tab_continue">继续</string>
+    <string name="auto_tab_recent">最近有声书</string>
+    <string name="auto_tab_latest">最新播客</string>
+    <string name="auto_tab_library">媒体库</string>
+    <string name="episodes_count">%1$d 集</string>
+    <string name="latest_episodes_count">最新单集 (%1$d)</string>
+    <string name="no_recent_episodes">没有最新单集</string>
+    <string name="downloading_latest">正在从服务器下载最新单集…</string>
+    <string name="delete_podcast">删除播客</string>
+    <string name="delete_podcast_confirm">确定吗？这将永久删除此播客及其所有单集。本设备上的下载也将被移除。</string>
+    <string name="podcast">播客</string>
+    <string name="episode_info">单集信息</string>
+    <string name="cast">投屏</string>
+    <string name="casting">投屏中</string>
+
+    <!-- Settings -->
+    <string name="connected_to_server">已连接到服务器</string>
+    <string name="offline_mode">离线模式</string>
+    <string name="offline_only_message">仅显示离线书库和设置</string>
+    <string name="offline_library">离线书库</string>
+    <string name="no_connection">无可用连接</string>
+
+    <!-- General -->
+    <string name="cancel">取消</string>
+    <string name="delete">删除</string>
+    <string name="remove">移除</string>
+    <string name="clear">清除</string>
+    <string name="none">无</string>
+    <string name="cancel_selection">取消选择</string>
+    <string name="selected_count">已选择 %1$d 项</string>
+
+    <!-- Language -->
+    <string name="language">语言</string>
+    <string name="language_automatic">自动</string>
+    <string name="language_english">English</string>
+    <string name="language_german">Deutsch</string>
+    <string name="language_french">Français</string>
+    <string name="language_italian">Italiano</string>
+    <string name="language_spanish">Español</string>
+    <string name="language_portuguese">Português</string>
+    <string name="language_polish">Polski</string>
+    <string name="language_ukrainian">Українська</string>
+    <string name="language_russian">Русский</string>
+    <string name="language_greek">Ελληνικά</string>
+    <string name="language_chinese">中文</string>
+    <string name="language_japanese">日本語</string>
+</resources>

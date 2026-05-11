@@ -1,0 +1,167 @@
+<resources>
+    <string name="app_name">Unshelved</string>
+    <string name="app_subtitle">Audiobookshelf クライアント</string>
+
+    <!-- Auth / Login -->
+    <string name="server_url">サーバーURL</string>
+    <string name="server_url_placeholder">https://my.abs.server</string>
+    <string name="connect">接続</string>
+    <string name="username">ユーザー名</string>
+    <string name="password">パスワード</string>
+    <string name="sign_in">ログイン</string>
+    <string name="sign_in_with_sso">SSOでログイン</string>
+    <string name="use_sso_instead">SSOを使用</string>
+    <string name="use_password_instead">パスワードを使用</string>
+    <string name="show_password">パスワードを表示</string>
+    <string name="hide_password">パスワードを非表示</string>
+    <string name="play_offline_library">オフラインライブラリを再生</string>
+    <string name="sign_out">ログアウト</string>
+    <string name="sign_out_confirm">ログアウトしてもよろしいですか？</string>
+    <string name="session_expired">セッションが期限切れです。再度ログインしてください。</string>
+
+    <!-- Navigation -->
+    <string name="home">ホーム</string>
+    <string name="library">ライブラリ</string>
+    <string name="settings">設定</string>
+    <string name="search">検索</string>
+    <string name="search_hint">%1$sを検索…</string>
+    <string name="search_audiobooks">オーディオブックを検索…</string>
+    <string name="search_podcasts">ポッドキャストを検索…</string>
+    <string name="search_new_podcasts">新しいポッドキャストを検索…</string>
+    <string name="back">戻る</string>
+    <string name="latest">最新</string>
+    <string name="series">シリーズ</string>
+    <string name="queue">キュー</string>
+
+    <!-- Home -->
+    <string name="no_content">コンテンツがありません。ライブラリを確認してください！</string>
+    <string name="now_playing">再生中</string>
+    <string name="shelf_continue_listening">続きを聴く</string>
+    <string name="shelf_continue_series">シリーズの続き</string>
+    <string name="shelf_recently_added">最近追加</string>
+    <string name="shelf_newest_episodes">最新エピソード</string>
+    <string name="shelf_listen_again">もう一度聴く</string>
+    <string name="shelf_discover">おすすめ</string>
+    <string name="shelf_recent_series">最近のシリーズ</string>
+
+    <!-- Library -->
+    <string name="switch_library">ライブラリを切替</string>
+    <string name="switch_to_grid">グリッド表示</string>
+    <string name="switch_to_list">リスト表示</string>
+    <string name="no_library_selected">ライブラリが未選択</string>
+    <string name="audiobook_library">オーディオブックライブラリ</string>
+    <string name="podcast_library">ポッドキャストライブラリ</string>
+    <string name="clear_filter">フィルターを解除</string>
+
+    <!-- Detail -->
+    <string name="details">詳細</string>
+    <string name="chapters">チャプター</string>
+    <string name="chapters_count">%1$d チャプター</string>
+    <string name="author">著者</string>
+    <string name="narrator">ナレーター</string>
+    <string name="genre">ジャンル</string>
+    <string name="play">再生</string>
+    <string name="download">ダウンロード</string>
+    <string name="downloaded">ダウンロード済み</string>
+    <string name="info">情報</string>
+    <string name="read_more">もっと読む</string>
+    <string name="show_more">もっと見る</string>
+    <string name="show_less">閉じる</string>
+    <string name="time_left">残り %1$s</string>
+    <string name="mark_finished">完了にする</string>
+    <string name="mark_as_finished">完了にする</string>
+    <string name="mark_unfinished">未完了にする</string>
+    <string name="finished">完了</string>
+    <string name="could_not_load_details">詳細を読み込めませんでした</string>
+    <string name="year">年</string>
+    <string name="duration">再生時間</string>
+    <string name="progress">進捗</string>
+    <string name="added">追加日</string>
+    <string name="not_started">未開始</string>
+
+    <!-- Series -->
+    <string name="could_not_load_series">シリーズを読み込めませんでした</string>
+
+    <!-- Player -->
+    <string name="playback">再生</string>
+    <string name="sleep">スリープタイマー</string>
+    <string name="jump_back">巻き戻し</string>
+    <string name="jump_forward">早送り</string>
+    <string name="cancel_timer">タイマーをキャンセル</string>
+    <string name="minutes_format">%1$d分</string>
+    <string name="seconds_format">%1$d秒</string>
+    <string name="more_options">その他</string>
+
+    <!-- Queue -->
+    <string name="queue_empty">キューは空です</string>
+    <string name="up_next_count">次に再生 (%1$d)</string>
+    <string name="add_to_queue">キューに追加</string>
+    <string name="remove_from_queue">キューから削除</string>
+    <string name="in_queue">キューに追加済み</string>
+    <string name="reorder">並び替え</string>
+
+    <!-- Downloads -->
+    <string name="manage_downloads">ダウンロード管理</string>
+    <string name="auto_delete_finished">完了済みを自動削除</string>
+    <string name="auto_delete_finished_description">完了から7日後にダウンロードを削除</string>
+    <string name="no_downloads">ダウンロードなし</string>
+    <string name="no_downloaded_audiobooks">ダウンロード済みのオーディオブックなし</string>
+    <string name="delete_download">ダウンロードを削除</string>
+    <string name="downloading_percent">ダウンロード中… (%1$d%%)</string>
+
+    <!-- Podcasts -->
+    <string name="add_podcast">ポッドキャストを追加</string>
+    <string name="add_to_library">ライブラリに追加</string>
+    <string name="adding_to_library">ポッドキャストをライブラリに追加中…</string>
+    <string name="adding">追加中…</string>
+    <string name="already_added">追加済み</string>
+    <string name="auto_download">自動ダウンロード</string>
+    <string name="auto_download_episodes">エピソードを自動ダウンロード</string>
+    <string name="auto_download_description">新しいエピソードを自動でダウンロード</string>
+    <string name="auto_tab_continue">続きを再生</string>
+    <string name="auto_tab_recent">最近のオーディオブック</string>
+    <string name="auto_tab_latest">最新のポッドキャスト</string>
+    <string name="auto_tab_library">ライブラリ</string>
+    <string name="episodes_count">%1$d エピソード</string>
+    <string name="latest_episodes_count">最新エピソード (%1$d)</string>
+    <string name="no_recent_episodes">最新エピソードなし</string>
+    <string name="downloading_latest">サーバーから最新エピソードをダウンロード中…</string>
+    <string name="delete_podcast">ポッドキャストを削除</string>
+    <string name="delete_podcast_confirm">本当に削除しますか？このポッドキャストとすべてのエピソードがサーバーから完全に削除されます。このデバイスのダウンロードも削除されます。</string>
+    <string name="podcast">ポッドキャスト</string>
+    <string name="episode_info">エピソード情報</string>
+    <string name="cast">キャスト</string>
+    <string name="casting">キャスト中</string>
+
+    <!-- Settings -->
+    <string name="connected_to_server">サーバーに接続中</string>
+    <string name="offline_mode">オフラインモード</string>
+    <string name="offline_only_message">オフラインライブラリと設定のみ表示</string>
+    <string name="offline_library">オフラインライブラリ</string>
+    <string name="no_connection">接続がありません</string>
+
+    <!-- General -->
+    <string name="cancel">キャンセル</string>
+    <string name="delete">削除</string>
+    <string name="remove">除去</string>
+    <string name="clear">クリア</string>
+    <string name="none">なし</string>
+    <string name="cancel_selection">選択を解除</string>
+    <string name="selected_count">%1$d件選択中</string>
+
+    <!-- Language -->
+    <string name="language">言語</string>
+    <string name="language_automatic">自動</string>
+    <string name="language_english">English</string>
+    <string name="language_german">Deutsch</string>
+    <string name="language_french">Français</string>
+    <string name="language_italian">Italiano</string>
+    <string name="language_spanish">Español</string>
+    <string name="language_portuguese">Português</string>
+    <string name="language_polish">Polski</string>
+    <string name="language_ukrainian">Українська</string>
+    <string name="language_russian">Русский</string>
+    <string name="language_greek">Ελληνικά</string>
+    <string name="language_chinese">中文</string>
+    <string name="language_japanese">日本語</string>
+</resources>
