@@ -17,16 +17,16 @@ A modern Android client for [Audiobookshelf](https://www.audiobookshelf.org/).
 ## Screenshots
 
 <p align="center">
-  <img src="docs/screenshots/audiobooks-home.png" width="24%" />
-  <img src="docs/screenshots/audiobooks-details.png" width="24%" />
-  <img src="docs/screenshots/player.png" width="24%" />
-  <img src="docs/screenshots/player-chapters.png" width="24%" />
+  <img src="docs/screenshots/audiobooks-home.webp" width="24%" />
+  <img src="docs/screenshots/audiobooks-details.webp" width="24%" />
+  <img src="docs/screenshots/player.webp" width="24%" />
+  <img src="docs/screenshots/player-chapters.webp" width="24%" />
 </p>
 <p align="center">
-  <img src="docs/screenshots/audiobooks-library.png" width="24%" />
-  <img src="docs/screenshots/audiobooks-series.png" width="24%" />
-  <img src="docs/screenshots/podcasts-latest.png" width="24%" />
-  <img src="docs/screenshots/downloads.png" width="24%" />
+  <img src="docs/screenshots/audiobooks-library.webp" width="24%" />
+  <img src="docs/screenshots/audiobooks-series.webp" width="24%" />
+  <img src="docs/screenshots/podcasts-latest.webp" width="24%" />
+  <img src="docs/screenshots/downloads.webp" width="24%" />
 </p>
 
 ## Requirements
