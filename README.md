@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="app/src/main/unshelved_book-playstore.png" width="128" />
+</p>
+
 # Unshelved
 
 A modern Android client for [Audiobookshelf](https://www.audiobookshelf.org/).
