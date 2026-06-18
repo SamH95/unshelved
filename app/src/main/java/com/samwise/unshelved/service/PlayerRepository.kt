@@ -19,6 +19,7 @@ import android.net.Uri
 import android.webkit.MimeTypeMap
 import androidx.media3.common.MediaItem.ClippingConfiguration
 import com.samwise.unshelved.core.model.AudioTrack
+import com.samwise.unshelved.core.model.AudioFile
 import com.samwise.unshelved.core.model.BookMetadata
 import com.samwise.unshelved.core.model.Chapter
 import com.samwise.unshelved.core.model.MediaProgress
@@ -266,10 +267,20 @@ class PlayerRepository @Inject constructor(
         } else null
 
         val mediaItems = if (localDir != null) {
-            val localFiles = localDir.listFiles()?.sortedBy { it.name } ?: emptyList()
+            val localFiles = localDir.listFiles()
+                ?.filter { !it.name.equals("cover.jpg", ignoreCase = true) }
+                ?.sortedBy { it.name }
+                ?: emptyList()
             Log.d(TAG, "Playing from local: ${localFiles.size} files in ${localDir.absolutePath}")
             if (localFiles.isEmpty()) {
                 Log.w(TAG, "Local dir exists but no files, falling back to streaming")
+                null
+            } else if (localFiles.size != session.audioTracks.size) {
+                // Local file order/count must match the server's audioTracks for
+                // toTrackIndex/toPositionInTrack to address the right MediaItem.
+                // If they don't, fall back to streaming rather than risk seeking
+                // into the wrong file.
+                Log.w(TAG, "Local file count (${localFiles.size}) != audioTracks (${session.audioTracks.size}), falling back to streaming")
                 null
             } else {
                 localFiles.map { file ->
@@ -878,6 +889,7 @@ class PlayerRepository @Inject constructor(
                 val duration = cachedItem?.media?.duration ?: savedProgress?.duration ?: 0.0
                 val metadata = cachedItem?.media?.metadata
                 val chapters = cachedItem?.media?.chapters ?: emptyList()
+                val audioFiles = cachedItem?.media?.audioFiles ?: emptyList()
                 val syntheticSession = createOfflineSession(
                     itemId = itemId,
                     metadata = metadata,
@@ -886,6 +898,8 @@ class PlayerRepository @Inject constructor(
                     currentTime = currentTime,
                     downloadTitle = download!!.title,
                     downloadAuthor = download.author,
+                    audioFiles = audioFiles,
+                    fileCount = files.size,
                 )
                 sessionId = syntheticSession.id
                 sessionStartTime = System.currentTimeMillis()
@@ -908,8 +922,13 @@ class PlayerRepository @Inject constructor(
                     }
                 }
 
-                val startIndex = 0
-                val startPosMs = (currentTime * 1000).toLong()
+                val tracks = syntheticSession.audioTracks
+                val startIndex = if (tracks.isNotEmpty()) currentTime.toTrackIndex(tracks) else 0
+                val startPosMs = if (tracks.isNotEmpty()) {
+                    (currentTime.toPositionInTrack(tracks) * 1000).toLong()
+                } else {
+                    (currentTime * 1000).toLong()
+                }
                 startPeriodicSync()
                 return MediaSession.MediaItemsWithStartPosition(items, startIndex, startPosMs)
             }
@@ -1023,6 +1042,7 @@ class PlayerRepository @Inject constructor(
         val duration = cachedItem?.media?.duration ?: savedProgress?.duration ?: 0.0
         val chapters = cachedItem?.media?.chapters ?: emptyList()
         val metadata = cachedItem?.media?.metadata
+        val audioFiles = cachedItem?.media?.audioFiles ?: emptyList()
 
         val syntheticSession = createOfflineSession(
             itemId = itemId,
@@ -1032,6 +1052,8 @@ class PlayerRepository @Inject constructor(
             currentTime = currentTime,
             downloadTitle = download.title,
             downloadAuthor = download.author,
+            audioFiles = audioFiles,
+            fileCount = localFiles.size,
         )
 
         sessionId = syntheticSession.id
@@ -1074,10 +1096,14 @@ class PlayerRepository @Inject constructor(
             val ctrl = controllerFlow.filterNotNull().first()
             ctrl.volume = 1.0f
             ctrl.setMediaItems(mediaItems)
-            if (mediaItems.size == 1) {
+            val tracks = syntheticSession.audioTracks
+            if (tracks.isEmpty() || mediaItems.size == 1) {
                 ctrl.seekTo(0, (currentTime * 1000).toLong())
             } else {
-                ctrl.seekTo(0, (currentTime * 1000).toLong())
+                ctrl.seekTo(
+                    currentTime.toTrackIndex(tracks),
+                    (currentTime.toPositionInTrack(tracks) * 1000).toLong(),
+                )
             }
             ctrl.prepare()
             ctrl.play()
@@ -1106,7 +1132,7 @@ internal fun Double.toPositionInTrack(tracks: List<AudioTrack>): Double {
 internal fun String.appendToken(token: String): String =
     if (contains("?")) "$this&token=$token" else "$this?token=$token"
 
-private fun createOfflineSession(
+internal fun createOfflineSession(
     itemId: String,
     metadata: BookMetadata?,
     chapters: List<Chapter>,
@@ -1114,6 +1140,8 @@ private fun createOfflineSession(
     currentTime: Double,
     downloadTitle: String,
     downloadAuthor: String?,
+    audioFiles: List<AudioFile> = emptyList(),
+    fileCount: Int = audioFiles.size,
 ): PlaybackSession = PlaybackSession(
     id = "offline_$itemId",
     libraryItemId = itemId,
@@ -1130,5 +1158,45 @@ private fun createOfflineSession(
     duration = duration,
     playMethod = 0,
     currentTime = currentTime,
-    audioTracks = emptyList(),
+    audioTracks = buildOfflineAudioTracks(audioFiles, fileCount, duration),
 )
+
+// Build synthetic AudioTracks for an offline session so that helpers like
+// toTrackIndex/toPositionInTrack and updateCurrentTime correctly translate
+// between absolute book time and per-MediaItem position when there are
+// multiple local files. Prefers real per-file durations from cached
+// audioFiles; falls back to evenly splitting the total duration when
+// only a file count is known.
+internal fun buildOfflineAudioTracks(
+    audioFiles: List<AudioFile>,
+    fileCount: Int,
+    totalDuration: Double,
+): List<AudioTrack> {
+    if (audioFiles.isNotEmpty()) {
+        var offset = 0.0
+        return audioFiles.mapIndexed { i, file ->
+            val track = AudioTrack(
+                index = i,
+                startOffset = offset,
+                duration = file.duration,
+                title = file.metadata.filename,
+                contentUrl = "",
+                mimeType = file.mimeType,
+            )
+            offset += file.duration
+            track
+        }
+    }
+    if (fileCount <= 1 || totalDuration <= 0.0) return emptyList()
+    val perFile = totalDuration / fileCount
+    return (0 until fileCount).map { i ->
+        AudioTrack(
+            index = i,
+            startOffset = i * perFile,
+            duration = perFile,
+            title = "",
+            contentUrl = "",
+            mimeType = "",
+        )
+    }
+}

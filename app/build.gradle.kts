@@ -13,8 +13,8 @@ android {
         applicationId = "com.samwise.unshelved"
         minSdk = 26
         targetSdk = 36
-        versionCode = 23
-        versionName = "1.4.7"
+        versionCode = 24
+        versionName = "1.4.8"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 

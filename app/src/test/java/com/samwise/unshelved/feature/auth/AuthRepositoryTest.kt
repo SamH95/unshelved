@@ -13,8 +13,7 @@ import io.mockk.mockk
 import io.mockk.verify
 import kotlinx.coroutines.test.runTest
 import okhttp3.ResponseBody.Companion.toResponseBody
-import org.junit.Assert.assertFalse
-import org.junit.Assert.assertTrue
+import org.junit.Assert.assertEquals
 import org.junit.Test
 import retrofit2.Response
 
@@ -56,12 +55,12 @@ class AuthRepositoryTest {
     }
 
     @Test
-    fun `validateToken returns true and saves data on success`() = runTest {
+    fun `validateToken returns Valid and saves data on success`() = runTest {
         val (repo, prefs) = createRepository()
 
         val result = repo.validateToken()
 
-        assertTrue(result)
+        assertEquals(TokenValidationResult.Valid, result)
         coVerify {
             prefs.saveLoginData(
                 serverUrl = "https://abs.example.com",
@@ -74,8 +73,8 @@ class AuthRepositoryTest {
     }
 
     @Test
-    fun `validateToken returns false on API failure`() = runTest {
-        val (repo, prefs, apiProvider) = createRepository()
+    fun `validateToken returns Rejected on API failure`() = runTest {
+        val (repo, _, apiProvider) = createRepository()
         val api = mockk<AbsApi> {
             coEvery { authorize() } returns Response.error(401, "".toResponseBody())
         }
@@ -83,12 +82,12 @@ class AuthRepositoryTest {
 
         val result = repo.validateToken()
 
-        assertFalse(result)
+        assertEquals(TokenValidationResult.Rejected, result)
     }
 
     @Test
-    fun `validateToken returns false on exception`() = runTest {
-        val (repo, prefs, apiProvider) = createRepository()
+    fun `validateToken returns NetworkError on exception`() = runTest {
+        val (repo, _, apiProvider) = createRepository()
         val api = mockk<AbsApi> {
             coEvery { authorize() } throws RuntimeException("network error")
         }
@@ -96,7 +95,7 @@ class AuthRepositoryTest {
 
         val result = repo.validateToken()
 
-        assertFalse(result)
+        assertEquals(TokenValidationResult.NetworkError, result)
     }
 
     @Test
